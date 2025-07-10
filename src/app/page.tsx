@@ -1,5 +1,6 @@
 import Link from "next/link";
 import GoogleLoginButton from "./components/GoogleLoginButton";
+import OTPInputField from "./components/OTPInputField";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       </section>
       <section className="flex flex-col items-center justify-center pt-41">
         <h1 className="font-bold">Google OAuth</h1>
+        <OTPInputField />
         <GoogleLoginButton />
       </section>
     </>
