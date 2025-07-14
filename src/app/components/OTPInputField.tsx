@@ -9,11 +9,14 @@ export default function OTPInputField() {
   const handleChange = (index: number, value: string) => {
     if (/^\d?$/.test(value)) {
       const newOtp = [...otp];
+      const wasFilled = newOtp[index] !== "";
       newOtp[index] = value;
       setOtp(newOtp);
 
       if (value && index < 5) {
         inputRefs.current[index + 1]?.focus();
+      } else if (!value && wasFilled && index > 0) {
+        inputRefs.current[index - 1]?.focus();
       }
     }
   };
