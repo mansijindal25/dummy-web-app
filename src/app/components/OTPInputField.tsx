@@ -26,8 +26,8 @@ export default function OTPInputField() {
   };
 
   return (
-    <div className="flex flex-col items-center gap-4 mt-10">
-      <div className="flex gap-2">
+    <section className="flex flex-col items-center gap-4 mt-10">
+      <section className="flex gap-2">
         {otp.map((digit, i) => (
           <input
             key={i}
@@ -41,10 +41,13 @@ export default function OTPInputField() {
             className="w-10 h-10 text-xl text-center border border-gray-400 rounded"
           />
         ))}
-      </div>
-      <button className="btn btn-primary mt-4" onClick={handleSubmit}>
+      </section>
+      <button
+        className="btn btn-primary mt-4 border bg-blue-500 text-white p-2 rounded mb-4"
+        onClick={handleSubmit}
+      >
         Submit OTP
       </button>
-    </div>
+    </section>
   );
 }
